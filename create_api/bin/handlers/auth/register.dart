@@ -11,7 +11,7 @@ register(Request request) async {
     await checkAuth(key: key, body: body);
 
     final base = SupabaseNet.supabases;
-    base?.auth.admin
+    await base?.auth.admin
         .createUser(AdminUserAttributes(
             email: body["email"],
             password: body["password"],
@@ -24,6 +24,8 @@ register(Request request) async {
     return Response.ok(jsonEncode({"msg": "Success create account "}),
         headers: {"Content-Type": "application/json"});
   } on FormatException catch (error) {
+    return Response.badRequest(body: error.message);
+  } on AuthException catch (error) {
     return Response.badRequest(body: error.message);
   } catch (e) {
     print(e);

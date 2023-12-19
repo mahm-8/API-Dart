@@ -25,7 +25,9 @@ login(Request request) async {
         headers: {"Content-Type": "application/json"});
   } on FormatException catch (error) {
     return Response.badRequest(body: error.message);
+  } on AuthException catch (error) {
+    return Response.badRequest(body: error.message);
   } catch (e) {
-    return Response.badRequest(body: e.toString());
+    return Response.badRequest(body: "ERROR!!!");
   }
 }
