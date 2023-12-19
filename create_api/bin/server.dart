@@ -10,8 +10,7 @@ void main() async {
     onReloaded: () => print('Reload!'),
     onHotReloadNotAvailable: () => print('No hot-reload :('),
     onHotReloadAvailable: () => print('Yay! Hot-reload :)'),
-    onHotReloadLog: (log) => print('Reload Log: ${log.message}'),gi
-    logLevel: Level.INFO,
+    onHotReloadLog: (log) => print('Reload Log: ${log.message}'),logLevel: Level.INFO,
   );
 }
 
