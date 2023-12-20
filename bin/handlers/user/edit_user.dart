@@ -11,7 +11,7 @@ updateUser(Request request) async {
     final Map body = jsonDecode(await request.readAsString());
     final user = SupabaseNet.supabases;
     final id =
-        await SupabaseNet.supabases!.auth.getUser(request.headers["token"]);
+        await SupabaseNet.supabases!.auth.getUser(request.headers["authorization"]?.split(' ')[1]);
     await checkuser(key: key, body: body);
     final getUser = await user
         ?.from("user_api")

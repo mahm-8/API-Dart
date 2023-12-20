@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:shelf/shelf_io.dart';
-import 'package:shelf_hotreload/shelf_hotreload.dart';
 import 'configs/supabase.dart';
 import 'routes/main_route.dart';
 

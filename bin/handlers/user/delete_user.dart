@@ -10,8 +10,8 @@ deleteUser(Request request) async {
     List<String> key = ["email"];
     await checkDelete(key: key, body: body);
     final user = SupabaseNet.supabases;
-    final id =
-        await SupabaseNet.supabases!.auth.getUser(request.headers["token"]);
+    final id = await SupabaseNet.supabases!.auth
+        .getUser(request.headers["authorization"]?.split(' ')[1]);
     await user!
         .from("user_api")
         .delete()
