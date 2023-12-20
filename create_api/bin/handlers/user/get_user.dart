@@ -13,7 +13,7 @@ users(Request request) async {
         ?.from("user_api")
         .select()
         .eq("id_auth", body.user!.id.toString());
-    print(getUser);
+    print(user!.auth.currentUser);
     return Response.ok(jsonEncode(getUser),
         headers: {"Content-Type": "application/json"});
   } catch (e) {

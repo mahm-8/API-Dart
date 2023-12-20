@@ -5,14 +5,7 @@ import 'configs/supabase.dart';
 import 'routes/main_route.dart';
 
 void main() async {
-  withHotreload(
-    () => createServer(),
-    onReloaded: () => print('Reload!'),
-    onHotReloadNotAvailable: () => print('No hot-reload :('),
-    onHotReloadAvailable: () => print('Yay! Hot-reload :)'),
-    onHotReloadLog: (log) => print('Reload Log: ${log.message}'),gi
-    logLevel: Level.INFO,
-  );
+ await createServer();
 }
 
 Future<HttpServer> createServer() async {
