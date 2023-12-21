@@ -3,7 +3,7 @@ import 'package:shelf_router/shelf_router.dart';
 
 import '../handlers/public/get_user.dart';
 
-class UsersRoute {
+class PublicRoute {
   Handler get userRoute {
     final route = Router();
     route.get("/", product);
