@@ -68,6 +68,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "dotenv",
+      "rootUri": "file:///C:/Users/ss52/AppData/Local/Pub/Cache/hosted/pub.dev/dotenv-4.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
       "name": "ed25519_edwards",
       "rootUri": "file:///C:/Users/ss52/AppData/Local/Pub/Cache/hosted/pub.dev/ed25519_edwards-0.3.1",
       "packageUri": "lib/",
@@ -410,7 +416,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-12-20T11:12:53.418078Z",
+  "generated": "2024-01-11T21:59:07.526278Z",
   "generator": "pub",
   "generatorVersion": "3.1.3"
 }

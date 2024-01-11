@@ -10,9 +10,10 @@ updateUser(Request request) async {
     List<String> key = ["username", "phone"];
     final Map body = jsonDecode(await request.readAsString());
     final user = SupabaseNet.supabases;
-    final id =
-        await SupabaseNet.supabases!.auth.getUser(request.headers["authorization"]?.split(' ')[1]);
+    final id = await SupabaseNet.supabases!.auth
+        .getUser(request.headers["authorization"]?.split(' ')[1]);
     await checkuser(key: key, body: body);
+
     final getUser = await user
         ?.from("user_api")
         .update(body)

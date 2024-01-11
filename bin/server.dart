@@ -4,10 +4,10 @@ import 'configs/supabase.dart';
 import 'routes/main_route.dart';
 
 void main() async {
- await createServer();
+  await createServer();
 }
 
-Future<HttpServer> createServer() async {
+Future<HttpServer> createServer() async {  
   SupabaseNet().supa;
   final ip = InternetAddress.anyIPv4;
   final port = int.parse(Platform.environment['PORT'] ?? '8080');
