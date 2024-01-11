@@ -7,13 +7,9 @@ import '../../configs/supabase.dart';
 users(Request request) async {
   try {
     final user = SupabaseNet.supabases;
-    final body =
-        await SupabaseNet.supabases!.auth.getUser(request.headers["token"]);
-    final getUser = await user
-        ?.from("user_api")
-        .select()
-        .eq("id_auth", body.user!.id.toString());
-    print(getUser);
+
+    final getUser = await user?.from("user_api").select();
+    print(user!.auth.currentUser);
     return Response.ok(jsonEncode(getUser),
         headers: {"Content-Type": "application/json"});
   } catch (e) {
